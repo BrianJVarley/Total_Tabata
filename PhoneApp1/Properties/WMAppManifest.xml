@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{07c62f97-1b07-4c76-a10a-4b4f84056178}" Title="Total Tabata" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp1 author" Description="Total Tabata, a total solution for Tabata training." Publisher="PhoneApp1" PublisherID="{4e8b0cb1-79d7-4fbf-a52f-fbd045d62a42}">
+  <Languages xmlns="">
+    <Language code="en" />
+  </Languages>
+  <App xmlns="" ProductID="{07c62f97-1b07-4c76-a10a-4b4f84056178}" Title="Total Tabata" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Brian Varley " Description="Total Tabata, a total solution for Tabata training." Publisher="Total Tabata" PublisherID="{4e8b0cb1-79d7-4fbf-a52f-fbd045d62a42}">
     <IconPath IsRelative="true" IsResource="false">timer_icon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

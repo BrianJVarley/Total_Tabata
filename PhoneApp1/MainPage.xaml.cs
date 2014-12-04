@@ -33,7 +33,7 @@ namespace TotalTabata
         string roundMax;
 
         //counter variable
-        int i = 0;
+        int i = 1;
         ////max rounds constant
         
 
@@ -47,8 +47,6 @@ namespace TotalTabata
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
-
-
 
         }
 
@@ -95,6 +93,13 @@ namespace TotalTabata
         void myTimer_Tick(object sender, EventArgs e)
         {
 
+                //progress bar measures time elapsed of work interval
+                workProgressBar.Value =
+                myStopwatch.ElapsedMilliseconds / workTm.TotalMilliseconds * 100;
+
+                ////progress bar measures time elapsed of rest interval
+                //restProgressBar.Value =
+                //myStopwatch.ElapsedMilliseconds / restTm.TotalMilliseconds * 100;
          
                 // update the textblock on the display
                 // with hh, mm, ss, ms
@@ -109,6 +114,7 @@ namespace TotalTabata
                 hh = mm / 60;
                 mm = mm % 60;
 
+                
 
                 tblDisplay.Text = hh.ToString("00") + " : " +
                                   mm.ToString("00") + " : " +
@@ -130,19 +136,22 @@ namespace TotalTabata
         private void intervalTrigger(ref TimeSpan workTm, ref TimeSpan restTm)
         {
 
+           
 
+            int roundMaxFlag;
 
-            //convert double string value from slider to an int for processing
-            int roundMaxFlag = Convert.ToInt32(Math.Round(Convert.ToDouble(roundMax)));
+            //parse string input to an int.
+            roundMaxFlag = int.Parse(roundMax);
 
-         
-
+          
             if (myStopwatch.Elapsed >= workTm)
             {
 
 
                 //set background color to red to signify rest period
-                StopGoCvs.Background = new SolidColorBrush(Colors.Red);
+                //StopGoCvs.Background = new SolidColorBrush(Colors.Red);
+                workProgressBar.Foreground = new SolidColorBrush(Colors.Red);
+                stopSoundElmt.Play();
 
 
                 //stop timer to signafy end of rest interval.
@@ -153,7 +162,8 @@ namespace TotalTabata
                     myStopwatch.Reset();
                     myTimer.Stop();
                     //set background to green to signify end of rest period
-                    StopGoCvs.Background = new SolidColorBrush(Colors.Green);
+                    //StopGoCvs.Background = new SolidColorBrush(Colors.Green);
+                    workProgressBar.Foreground = new SolidColorBrush(Colors.Green);
                     tblDisplay.Text = constDefaultInterval;
                     
 
@@ -163,10 +173,9 @@ namespace TotalTabata
 
                 //if number of iterations is less than the max, 
                 //start the timer and continue the looping
-                if (i <= roundMaxFlag)
+                if (i < roundMaxFlag)
                 {
-
-                
+                    
                     myStopwatch.Start();
                     myTimer.Start();      
 
@@ -178,6 +187,9 @@ namespace TotalTabata
                     myTimer.Stop();
 
                 }
+
+                currRoundTblk.Text = i.ToString();
+
 
             }
                       
@@ -208,9 +220,9 @@ namespace TotalTabata
             try
             {
 
-                StopGoCvs.Background = new SolidColorBrush(Colors.Red);
+                //StopGoCvs.Background = new SolidColorBrush(Colors.Red);
+                workProgressBar.Foreground = new SolidColorBrush(Colors.Red);
 
-                //stopSoundElmt.Play();
 
 
                 myTimer.Stop();
@@ -229,11 +241,7 @@ namespace TotalTabata
         
         }
 
-        private void StartTimerForMe()
-        {
-            
-        }
-
+       
         private async void startBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             
@@ -242,8 +250,10 @@ namespace TotalTabata
             await System.Threading.Tasks.Task.Delay(time);
 
 
-            StopGoCvs.Background = new SolidColorBrush(Colors.Green);
-            //startSoundElmt.Play();
+            //StopGoCvs.Background = new SolidColorBrush(Colors.Green);
+            workProgressBar.Foreground = new SolidColorBrush(Colors.Green);
+            startSoundElmt.Play();
+            
 
 
             // set up the timer

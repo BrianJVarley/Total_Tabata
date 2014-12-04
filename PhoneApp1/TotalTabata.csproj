@@ -15,11 +15,10 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures>en-IE%3ben-GB</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>TotalTabata_Debug_AnyCPU.xap</XapFilename>
+    <XapFilename>TotalTabata_Release_AnyCPU.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>TotalTabata.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -106,8 +105,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +122,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings.xaml">
+    <Page Include="About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +133,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="TotalTabata_2014_12_03_15_17_18.sap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -170,19 +170,29 @@
     <Content Include="Resources\Toolkit.Content\ApplicationBar.Select.png" />
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\Toolkit.Content\ApplicationBar.Settings.png" />
+    <Content Include="Resources\Toolkit.Content\ApplicationBar.Save.png" />
+    <Content Include="Resources\Toolkit.Content\ApplicationBar.Question.png" />
+    <Content Include="Resources\totalTabataInfo.txt" />
     <Content Include="timer_icon.png" />
     <Content Include="timer_icon_medium.png" />
     <Content Include="timer_icon_small.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.en-GB.resx" />
+    <EmbeddedResource Include="Resources\AppResources.en-IE.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Bewise.Phone">
+      <HintPath>..\packages\BewisePhoneControls.2.1\lib\Bewise.Phone.dll</HintPath>
+    </Reference>
     <Reference Include="Coding4Fun.Toolkit.Audio">
       <HintPath>..\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll</HintPath>
     </Reference>
@@ -195,8 +205,17 @@
     <Reference Include="Coding4Fun.Toolkit.Storage">
       <HintPath>..\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Phone.Controls.Toolkit">
-      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkitWP.4.2011.12.14\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WinPhoneControls.Core">
+      <HintPath>..\packages\WinPhoneControls.1.0.1\lib\WinPhoneControls.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WinPhoneControls.Input">
+      <HintPath>..\packages\WinPhoneControls.1.0.1\lib\WinPhoneControls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="WinPhoneControls.Primitives">
+      <HintPath>..\packages\WinPhoneControls.1.0.1\lib\WinPhoneControls.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using TotalTabata.Resources;
+using System.IO;
 
 namespace TotalTabata
 {
@@ -17,6 +18,8 @@ namespace TotalTabata
         {
             InitializeComponent();
         }
+
+        
 
         private void liveTileBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -43,5 +46,16 @@ namespace TotalTabata
             }
 
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            //using (StreamReader reader = File.OpenText(@"Resources/totalTabataInfo.txt"))
+
+            //    aboutTxtBlk.Text = reader.ReadLine();
+
+        }
+
+        
     }
 }

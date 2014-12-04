@@ -16,12 +16,16 @@ namespace TotalTabata
 
         const string constDefaultInterval = "00 : 00 : 00 : 000";
 
+        
+
        
 
         public ExerciseList()
         {
-            InitializeComponent();
 
+            InitializeComponent();
+           
+           
           
         }
 
@@ -31,24 +35,35 @@ namespace TotalTabata
         private void appBarAddBtn_Click(object sender, EventArgs e)
         {
 
-            
+            if (roundsTbx.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter number of rounds..");
+                roundsTbx.Focus();
+                return;
+            }
+            else
+            {
                 string url = "/MainPage.xaml" +
                 "?workTimeSpanPkr=" + System.Net.WebUtility.UrlEncode(workTimeSpanPkr.ValueString) +
                 "&restTimeSpanPkr=" + System.Net.WebUtility.UrlEncode(restTimeSpanPkr.ValueString) +
                 "&roundsTbx=" + System.Net.WebUtility.UrlEncode(roundsTbx.Text);
-                
+
                 NavigationService.Navigate(new Uri(url, UriKind.Relative));
+
+
+            }
+            
+                
 
         
             
         }
 
-        
+       
 
-        private void appBarSettingsBtn_Click(object sender, EventArgs e)
+        private void appBarAboutBtn_Click(object sender, EventArgs e)
         {
-
-            NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
 
         

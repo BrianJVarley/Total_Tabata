@@ -1,9 +1,11 @@
-﻿<phone:PhoneApplicationPage
+﻿<phone:PhoneApplicationPage Loaded="PhoneApplicationPage_Loaded"
     x:Class="TotalTabata.Settings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:toolkit_primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -23,15 +25,14 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="TOTAL TABATA" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="About" Foreground="DodgerBlue" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock HorizontalAlignment="Left" Margin="29,426,0,0" TextWrapping="Wrap" Text="Add Tile" VerticalAlignment="Top"/>
-            <Button x:Name="liveTileBtn" Click="liveTileBtn_Click" Content="Live Tile" HorizontalAlignment="Left" Margin="10,458,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.619"/>
-            <TextBlock HorizontalAlignment="Left" Margin="29,289,0,0" TextWrapping="Wrap" Text="Music" VerticalAlignment="Top"/>
-            <RadioButton Content="On/Off" x:Name="musicChkbx" HorizontalAlignment="Left" Margin="19,334,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,426,0,0" TextWrapping="Wrap" Foreground="DodgerBlue" Text="Add Total Tabata Tile " VerticalAlignment="Top"/>
+            <Button x:Name="liveTileBtn" Background="DodgerBlue" Click="liveTileBtn_Click" Content="Home Tile" HorizontalAlignment="Left" Margin="10,458,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.619"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,10,0,0" x:Name="aboutTxtBlk" TextWrapping="Wrap" Text="Total Tabata is a total solution to all your interval training needs." FontSize="25" VerticalAlignment="Top" Height="332" Width="357"/>
 
         </Grid>
     </Grid>
