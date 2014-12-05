@@ -12,18 +12,21 @@
     <RootNamespace>TotalTabata</RootNamespace>
     <AssemblyName>TotalTabata</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>en-IE%3ben-GB</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>TotalTabata_Release_AnyCPU.xap</XapFilename>
+    <XapFilename>TotalTabata_$(Configuration)_$(Platform).xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>TotalTabata.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +59,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -66,6 +70,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,6 +82,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
     <DebugType>pdbonly</DebugType>
@@ -87,6 +93,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -128,6 +135,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -140,7 +151,15 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\goWhistle.wav" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\timer_icon_44.png" />
+    <Content Include="Assets\TT_Store_Logo.png" />
+    <Content Include="Assets\store_logo_tt.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -157,6 +176,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\stopWhistle.wav" />
+    <Content Include="Assets\Tiles\timer_icon_small.png" />
+    <Content Include="Assets\timer_icon_logo_100.png" />
+    <Content Include="Assets\timer_icon_medium.png" />
+    <Content Include="Assets\timer_icon_small.png" />
+    <Content Include="Assets\timer_icon_splash.png" />
+    <Content Include="Assets\WideLogo.png" />
     <Content Include="Images\blue_flip_icon_medium.png" />
     <Content Include="Images\blue_flip_icon_small.png" />
     <Content Include="Images\timer_icon_medium.png" />
@@ -173,6 +198,8 @@
     <Content Include="Resources\Toolkit.Content\ApplicationBar.Save.png" />
     <Content Include="Resources\Toolkit.Content\ApplicationBar.Question.png" />
     <Content Include="Resources\totalTabataInfo.txt" />
+    <Content Include="tile_medium.png" />
+    <Content Include="tile_small.png" />
     <Content Include="timer_icon.png" />
     <Content Include="timer_icon_medium.png" />
     <Content Include="timer_icon_small.png" />

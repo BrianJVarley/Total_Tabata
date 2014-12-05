@@ -151,7 +151,7 @@ namespace TotalTabata
                 //set background color to red to signify rest period
                 //StopGoCvs.Background = new SolidColorBrush(Colors.Red);
                 workProgressBar.Foreground = new SolidColorBrush(Colors.Red);
-                stopSoundElmt.Play();
+                
 
 
                 //stop timer to signafy end of rest interval.
@@ -165,6 +165,7 @@ namespace TotalTabata
                     //StopGoCvs.Background = new SolidColorBrush(Colors.Green);
                     workProgressBar.Foreground = new SolidColorBrush(Colors.Green);
                     tblDisplay.Text = constDefaultInterval;
+                    startSoundElmt.Play();
                     
 
                 }
@@ -220,7 +221,7 @@ namespace TotalTabata
             try
             {
 
-                //StopGoCvs.Background = new SolidColorBrush(Colors.Red);
+                
                 workProgressBar.Foreground = new SolidColorBrush(Colors.Red);
 
 

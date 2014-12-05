@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <Languages xmlns="">
     <Language code="en" />
@@ -19,20 +19,20 @@
     <Tokens>
       <PrimaryToken TokenID="PhoneApp1Token" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">timer_icon_small.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">tile_small.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">timer_icon_medium.png</BackgroundImageURI>
-          <Title>Total Tabata</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">tile_medium.png</BackgroundImageURI>
+          <Title>
+          </Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <DeviceLockImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>false</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

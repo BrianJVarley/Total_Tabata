@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="099cbd5c-9799-4d88-9ce4-933c56d37e7b" Publisher="CN=Brian" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="07c62f97-1b07-4c76-a10a-4b4f84056178" PhonePublisherId="4e8b0cb1-79d7-4fbf-a52f-fbd045d62a42" />
+  <Properties>
+    <DisplayName>TotalTabata</DisplayName>
+    <PublisherDisplayName>Brian</PublisherDisplayName>
+    <Logo>Assets\TT_Store_Logo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="x07c62f97y1b07y4c76ya10ay4b4f84056178x" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
+      <m3:VisualElements DisplayName="TotalTabata" Square150x150Logo="Assets\timer_icon_medium.png" Square44x44Logo="Assets\timer_icon_44.png" Description="Total Tabata is a total solution for all your interval and HIT training needs." ForegroundText="light" BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\timer_icon_small.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\timer_icon_splash.png" />
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>
